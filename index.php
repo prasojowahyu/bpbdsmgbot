@@ -9,7 +9,7 @@
 	//event bot
 	$bot->on('new_chat_member', function() {
 		//ketika ada user respon, kasih pesan
-		Bot::sendMessage('Halo Selamat Datang! :)')
+		Bot::sendMessage('Halo Selamat Datang! :)');
 	});
 
 	//baris paling bawah
