@@ -8,8 +8,13 @@
 
 	//event bot
 	$bot->on('new_chat_member', function() {
-		//ketika ada user respon, kasih pesan
-		Bot::sendMessage('Halo Selamat Datang! :)');
+		//ketika ada user respon, kasih pesan, sekaligus sapa usernamenya
+		$msg	= Bot::message(); //ambil dari respon bot
+		$nama	= $msg['new_chat_member']['first_name']; //ambil dari array respon dari event di grup(json)
+		$greet 	= 'Halo Selamat Bergabung, ' . $nama;
+
+		//send greetings
+		Bot::sendMessage($greet);
 	});
 
 	//baris paling bawah
