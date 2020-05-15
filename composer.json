@@ -1,0 +1,5 @@
+{
+    "require": {
+        "radyakaze/phptelebot": "^1.3"
+    }
+}
