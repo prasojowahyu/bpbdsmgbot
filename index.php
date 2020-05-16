@@ -17,10 +17,15 @@
 			$nama	.= ' '. $msg['new_chat_member']['last_name'];
 		}
 		
-		$greet 	= 'Halo Selamat Bergabung, ' . $nama;
+		$greet 	= 'Halo Selamat Bergabung, <b>' . $nama . '</b>!';
+
+		//text bold untuk username yg baru gabung
+		$option = [
+			'parse_mode' => 'html'
+		];
 
 		//send greetings
-		Bot::sendMessage($greet);
+		Bot::sendMessage($greet, $option);
 	});
 
 	//baris paling bawah
