@@ -6,6 +6,12 @@
 	$bot->cmd('/start', 'Hello there :)');
 	$bot->cmd('/ping', 'PONG!!');
 
+	//command tampilkan waktu sekarang (WIB)
+	$bot->cmd('/time', function ($text) {
+		$text	= 'Waktu Sekarang, pukul ' . date('H:i:s') . ' WIB. Tanggal,' . date('d M Y');
+		return Bot::sendMessage($text);
+	});
+
 	//event bot
 	$bot->on('new_chat_member', function() {
 		//ketika ada user respon, kasih pesan, sekaligus sapa usernamenya
@@ -21,7 +27,8 @@
 		$greet	.= "\n\nIni adalah grup percobaan bot, mohon maaf kalau mengganggu notifikasimu ya, hehe :V \n";
 		$greet	.= "Kalo mau coba, silakan bisa cobain perintah ini: \n";
 		$greet	.= "/start = inisialisasi bot \n";
-		$greet	.= "/ping = tes response user ke bot \n\n";
+		$greet	.= "/ping = tes response user ke bot \n";
+		$greet	.= "/time = untuk lihat waktu sekarang \n\n"
 		$greet	.= "Silahkan dicoba, <b>" . $nama . "</b>";
 
 		//text bold untuk username yg baru gabung
