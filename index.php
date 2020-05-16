@@ -16,8 +16,12 @@
 		if ( isset($msg['new_chat_member']['last_name']) ) {
 			$nama	.= ' '. $msg['new_chat_member']['last_name'];
 		}
-		
+
 		$greet 	= 'Halo Selamat Bergabung, <b>' . $nama . '</b>!';
+		$greet	.= "\n\nIni adalah grup percobaan bot, mohon maaf kalau mengganggu notifikasimu ya, hehe :V \n";
+		$greet	.= "Kalo mau coba, silakan bisa cobain perintah ini: \n";
+		$greet	.= "/start = inisialisasi bot \n";
+		$greet	.= "/ping = tes response user ke bot \n";
 
 		//text bold untuk username yg baru gabung
 		$option = [
