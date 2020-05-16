@@ -11,6 +11,12 @@
 		//ketika ada user respon, kasih pesan, sekaligus sapa usernamenya
 		$msg	= Bot::message(); //ambil dari respon bot
 		$nama	= $msg['new_chat_member']['first_name']; //ambil dari array respon dari event di grup(json)
+
+		//sapa pake nama belakang sekalian kalo ada
+		if ( isset($msg['new_chat_member']['last_name']) ) {
+			$nama	.= ' '. $msg['new_chat_member']['last_name'];
+		}
+		
 		$greet 	= 'Halo Selamat Bergabung, ' . $nama;
 
 		//send greetings
