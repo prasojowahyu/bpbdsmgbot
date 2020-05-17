@@ -11,8 +11,22 @@
 		return Bot::sendMessage($text);
 	});
 
-	//bot menu /start diatas keyboard
-	
+	//menu button /start diatas keyboard
+	$bot->cmd('/start', function() {
+		//inisialisasi
+		$text		= "Silakan pilih menu disini.. \n";
+
+		//menu button
+		$keyboard[]	= ['Spesial', 'Combo', 'Praktis'];
+		$keyboard[]	= ['Sides','Drinks'];
+
+		//telebot plugin
+		$option		= [
+			'reply_markup' => ['keyboard'=> $keyboard]
+		];
+
+		return Bot::sendMessage($text, $option);
+	});
 
 	//event bot
 	$bot->on('new_chat_member', function() {
