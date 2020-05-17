@@ -22,7 +22,9 @@
 
 		//telebot plugin
 		$option		= [
-			'reply_markup' => ['keyboard'=> $keyboard]
+			'reply_markup' => ['keyboard'=> $keyboard,
+			'resize_keyboard'=> true
+			]
 		];
 
 		return Bot::sendMessage($text, $option);
