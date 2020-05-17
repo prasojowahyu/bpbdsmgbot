@@ -20,8 +20,8 @@
 		$text		= "👋🏻 Hai, " . $nama . ". Silakan pilih menu disini.. \n";
 
 		//menu button
-		$keyboard[]	= ['Spesial', 'Combo', 'Praktis'];
-		$keyboard[]	= ['Sides','Drinks'];
+		$keyboard[]	= ['Kabar Terbaru', 'Website', 'Instagram'];
+		$keyboard[]	= ['Twitter', 'Facebook', 'Contact'];
 
 		//telebot plugin
 		$option		= [
@@ -33,14 +33,14 @@
 		return Bot::sendMessage($text, $option);
 	});
 
-	#Spesial
-	//isi dari menu button spesial
-	$bot->cmd('Spesial', function() {
+	#Kabar Terbaru
+	//isi dari menu button Kabar
+	$bot->cmd('Kabar Terbaru', function() {
 		//inisialisasi
-		$text		= "Pilihan menu Spesial \n";
+		$text		= "Kabar Terbaru Untuk: \n";
 
 		//menu button
-		$keyboard[]	= ['Ayam Tiren', 'Bakso bb', 'Taichan 4646'];
+		$keyboard[]	= ['Semua Kabar', 'Bencana', 'Cuaca'];
 
 		//telebot plugin
 		$option		= [
