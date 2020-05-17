@@ -28,7 +28,7 @@
 		$greet	.= "Kalo mau coba, silakan bisa cobain perintah ini: \n";
 		$greet	.= "/start = inisialisasi bot \n";
 		$greet	.= "/ping = tes response user ke bot \n";
-		$greet	.= "/time = untuk lihat waktu sekarang \n\n"
+		$greet	.= "/time = untuk lihat waktu sekarang \n\n";
 		$greet	.= "Silahkan dicoba, <b>" . $nama . "</b>";
 
 		//text bold untuk username yg baru gabung
