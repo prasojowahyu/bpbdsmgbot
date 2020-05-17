@@ -11,6 +11,7 @@
 		return Bot::sendMessage($text);
 	});
 
+	#Start
 	//menu button /start diatas keyboard
 	$bot->cmd('/start', function() {
 		//inisialisasi
@@ -21,6 +22,25 @@
 		//menu button
 		$keyboard[]	= ['Spesial', 'Combo', 'Praktis'];
 		$keyboard[]	= ['Sides','Drinks'];
+
+		//telebot plugin
+		$option		= [
+			'reply_markup' => ['keyboard'=> $keyboard,
+			'resize_keyboard'=> true
+			]
+		];
+
+		return Bot::sendMessage($text, $option);
+	});
+
+	#Spesial
+	//isi dari menu button spesial
+	$bot->cmd('Spesial', function() {
+		//inisialisasi
+		$text		= "Pilihan menu Spesial \n";
+
+		//menu button
+		$keyboard[]	= ['Ayam Tiren', 'Bakso bb', 'Taichan 4646'];
 
 		//telebot plugin
 		$option		= [
