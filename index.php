@@ -16,9 +16,9 @@
 	//menu button /start diatas keyboard
 	$bot->cmd('/start', function() {
 		//inisialisasi
-		$msg	= Bot::message(); //ambil dari respon bot
-		$nama	= $msg['id']['first_name']; //ambil dari array respon dari event di grup(json)
-		$text		= "👋🏻 Hai, " . $nama . ". Silakan pilih menu disini.. \n";
+		//$msg	= Bot::message(); //ambil dari respon bot
+		//$nama	= $msg['id']['first_name']; //ambil dari array respon dari event di grup(json)
+		$text		= "👋🏻 Hai, Silakan pilih menu disini.. \n";
 
 		//menu button
 		$keyboard[]	= ['Kabar Terbaru', 'Website', 'Instagram'];

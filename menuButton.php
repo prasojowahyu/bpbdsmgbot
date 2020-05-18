@@ -1,14 +1,14 @@
 <?php 
     //berisi syntax untuk submenu button di index
     
-    #Kabar Terbaru
+    #Sub-Menu: Kabar Terbaru
 	//isi dari menu button Kabar
 	$bot->cmd('Kabar Terbaru', function() {
 		//inisialisasi
 		$text		= "Kabar Terbaru Untuk: \n";
 
 		//menu button
-		$keyboard[]	= ['Semua Kabar', 'Bencana', 'Cuaca'];
+		$keyboard[]	= ['Semua', 'Bencana', 'Cuaca'];
 
 		//telebot plugin
 		$option		= [
@@ -17,7 +17,13 @@
 			]
 		];
 
-		return Bot::sendMessage($text, $option);
+		return Bot::sendMessage( $text, $option );
 	});
+		#Item-Menu: Semua
+		$bot->cmd('Semua', function() {
+			//ambil id file gambar dari json file yg dikirim user lewat tele
+			$photo_id	= 'AgACAgUAAxkBAAMrXsHg7ltBB81Y05hpUUIVXxWpFb0AAsqpMRufVRBWor5uB0lOAdM5bxprdAADAQADAgADbQADkJoAAhkE';
+			return Bot::sendPhoto( $photo_id );
+		});
 
 ?>
