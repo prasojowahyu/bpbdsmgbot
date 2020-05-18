@@ -21,9 +21,14 @@
 	});
 		#Item-Menu: Semua
 		$bot->cmd('Semua', function() {
+			//add caption
+			$option		= [
+				'caption'	=> 'THISISCAPTION'
+			];
 			//ambil id file gambar dari json file yg dikirim user lewat tele
 			$photo_id	= 'AgACAgUAAxkBAAMrXsHg7ltBB81Y05hpUUIVXxWpFb0AAsqpMRufVRBWor5uB0lOAdM5bxprdAADAQADAgADbQADkJoAAhkE';
-			return Bot::sendPhoto( $photo_id );
+			
+			return Bot::sendPhoto( $photo_id, $option );
 		});
 
 ?>
