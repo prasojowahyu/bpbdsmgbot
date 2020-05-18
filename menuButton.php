@@ -1,4 +1,5 @@
 <?php 
+	
     //berisi syntax untuk submenu button di index
     
     #Sub-Menu: Kabar Terbaru
@@ -9,6 +10,7 @@
 
 		//menu button
 		$keyboard[]	= ['Semua', 'Bencana', 'Cuaca'];
+		$keyboard[] = ['Home'];
 
 		//telebot plugin
 		$option		= [

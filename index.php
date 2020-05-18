@@ -14,7 +14,7 @@
 
 	#Start
 	//menu button /start diatas keyboard
-	$bot->cmd('/start', function() {
+	$bot->cmd('/start|Home', function() {
 		//inisialisasi
 		//$msg	= Bot::message(); //ambil dari respon bot
 		//$nama	= $msg['id']['first_name']; //ambil dari array respon dari event di grup(json)
