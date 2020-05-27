@@ -21,8 +21,8 @@
 		$text		= "👋🏻 Hai, Silakan pilih menu disini.. \n";
 
 		//menu button
-		$keyboard[]	= ['Kabar Terbaru', 'Website', 'Instagram'];
-		$keyboard[]	= ['Twitter', 'Facebook', 'Contact'];
+		$keyboard[]	= ['Kabar Terbaru', 'Website'];
+		$keyboard[]	= ['Sosial Media', 'Contact'];
 
 		//telebot plugin
 		$option		= [
