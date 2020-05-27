@@ -1,5 +1,5 @@
 <?php 
-	
+	require 'header.php';
     //berisi syntax untuk submenu button di index
     
     #Sub-Menu: Kabar Terbaru
@@ -62,4 +62,19 @@
 		
 	});
 
+	#Sub-Menu: Contact
+	//send to email
+	$bot->cmd('Contact', function() {
+		//redirect telegram ke web bpbd srg
+		// $keyboard[] = [
+		// 	['mailto' => '📬 Email', 'email' => 'emailpribados@gmail.com'],
+		// ];
+		
+		$contact	= '[Silakan kirim email anda kesini](mailto:jojowahyu98@gmail.com)';
+		$option		= [
+			'parse_mode' => 'Markdown',
+		];
+		return Bot::sendMessage($contact, $option);
+		
+	});
 ?>
