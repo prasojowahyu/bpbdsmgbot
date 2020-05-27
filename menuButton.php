@@ -33,4 +33,17 @@
 			return Bot::sendPhoto( $photo_id, $option );
 		});
 
+	#Sub-Menu: Website
+	$bot->cmd('Website', function() {
+		//redirect telegram ke web bpbd srg
+		$keyboard[] = [
+			['text' => '🌐 Web BPBD Semarang', 'url' => 'https://bpbd.semarangkota.go.id'],
+		];
+		$option		= [
+			'reply_markup'	=> ['inline_keyboard' => $keyboard],
+		];
+		return Bot::sendMessage('Silakan akses link dibawah', $option);
+		
+	});
+
 ?>
