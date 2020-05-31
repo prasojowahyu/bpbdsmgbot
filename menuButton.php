@@ -75,7 +75,7 @@
 		// 	['mailto' => '📬 Email', 'email' => 'emailpribados@gmail.com'],
 		// ];
 		
-		$contact	= '[Silakan kirim email anda kesini](mailto:jojowahyu98@gmail.com)';
+		$contact	= '[Silakan kirim email anda kesini](mailto:bpbdsemarangkota@gmail.com)';
 		$option		= [
 			'parse_mode' => 'Markdown',
 		];
