@@ -57,6 +57,8 @@
 		$keyboard[] = [
 			['text' => '🟡Instagram', 'url' => 'https://www.instagram.com/bpbd_semarang/'],
 			['text' => '🟢 Twitter', 'url' => 'https://twitter.com/BPBD_Semarang'],
+		];
+		$keyboard[] = [
 			['text' => '🔵 Facebook', 'url' => 'https://www.facebook.com/bpbd.semarang'],
 			['text' => '🔴 Youtube', 'url' => 'https://www.youtube.com/channel/UCx3mUCT3iKzFQ2T0oHrZQUQ/'],
 		];
@@ -70,10 +72,6 @@
 	#Sub-Menu: Contact
 	//send to email
 	$bot->cmd('Contact', function() {
-		//redirect telegram ke web bpbd srg
-		// $keyboard[] = [
-		// 	['mailto' => '📬 Email', 'email' => 'emailpribados@gmail.com'],
-		// ];
 		
 		$contact	= '[Silakan kirim email anda kesini](mailto:bpbdsemarangkota@gmail.com)';
 		$option		= [
