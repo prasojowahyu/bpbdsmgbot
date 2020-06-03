@@ -21,6 +21,12 @@
 		return Bot::sendMessage( $text, $option );
 	});
 		#Item-Menu: Bencana
+		$bot->cmd('Bencana', function() {
+			$url	= "Link menuju berita bencana terbaru \n http://bpbd.semarangkota.go.id/category/berita";
+			return Bot::sendMessage( $url );
+		});
+		
+		#Item-Menu: Cuaca
 		$bot->cmd('Cuaca', function() {
 			$link	= "https://www.bmkg.go.id/cuaca/prakiraan-cuaca.bmkg?Kota=Semarang&AreaID=501262&Prov=35";
 			$url	= "Informasi Cuaca terbaru di Kota Semarang, \nSumber: bmkg \n" .$link;
