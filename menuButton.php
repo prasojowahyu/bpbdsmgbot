@@ -1,5 +1,4 @@
 <?php 
-	require 'header.php';
     //berisi syntax untuk submenu button di index
     
     #Sub-Menu: Kabar Terbaru
@@ -21,13 +20,6 @@
 
 		return Bot::sendMessage( $text, $option );
 	});
-		#Item-Menu: Bencana
-		$bot->cmd('Bencana', function() {
-			
-			$url	= "Link menuju berita bencana terbaru \n http://bpbd.semarangkota.go.id/category/berita";
-			
-			return Bot::sendMessage( $url );
-		});
 		#Item-Menu: Bencana
 		$bot->cmd('Cuaca', function() {
 			$link	= "https://www.bmkg.go.id/cuaca/prakiraan-cuaca.bmkg?Kota=Semarang&AreaID=501262&Prov=35";
