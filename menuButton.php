@@ -22,7 +22,7 @@
 	});
 		#Item-Menu: Bencana
 		$bot->cmd('Bencana', function() {
-			$url	= "Link menuju berita bencana terbaru \n http://bpbd.semarangkota.go.id/category/berita";
+			$url	= "Akses channel berita terbaru \n http://t.me/BPBD_Semarang/";
 			return Bot::sendMessage( $url );
 		});
 		
