@@ -73,7 +73,7 @@
 	$bot->cmd('Contact', function() {
 		
 		$keyboard[] = [
-			['text' => '🌐 WhatsApp BPBD Semarang', 'url' => 'https://api.whatsapp.com/send?phone=628122020051'],
+			['text' => '🌐 WhatsApp BPBD Semarang', 'url' => 'https://api.whatsapp.com/send?phone=628122010051'],
 		];
 		$option		= [
 			'reply_markup'	=> ['inline_keyboard' => $keyboard],
