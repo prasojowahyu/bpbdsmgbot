@@ -22,8 +22,9 @@
 	});
 		#Item-Menu: Bencana
 		$bot->cmd('Bencana', function() {
-			$url	= "Akses channel berita terbaru \n http://t.me/BPBD_Semarang/";
-			return Bot::sendMessage( $url );
+			$url	= "https://t.me/BPBD_Semarang/";
+			$text	= "Dapatkan update terbaru dari BPBD Kota Semarang, Aktifkan notifikasi di Channel ini: \n" .$url;
+			return Bot::sendMessage( $text, $url );
 		});
 		
 		#Item-Menu: Cuaca
@@ -71,11 +72,12 @@
 	//send to email
 	$bot->cmd('Contact', function() {
 		
-		$contact	= '[Silakan kirim email anda kesini](mailto:bpbdsemarangkota@gmail.com)';
-		$option		= [
-			'parse_mode' => 'Markdown',
+		$keyboard[] = [
+			['text' => '🌐 WhatsApp BPBD Semarang', 'url' => 'https://api.whatsapp.com/send?phone=628122020051'],
 		];
-		return Bot::sendMessage($contact, $option);
-		
+		$option		= [
+			'reply_markup'	=> ['inline_keyboard' => $keyboard],
+		];
+		return Bot::sendMessage('Silakan kirimkan laporan kejadian, masukan, atau saran ke kontak berikut', $option);
 	});
 ?>
