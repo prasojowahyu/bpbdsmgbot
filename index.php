@@ -47,12 +47,11 @@
 
 		//sambutan kalo ada member baru dalam grup
 		$greet 	= 'Halo Selamat Bergabung, <b>' . $nama . '</b>!';
-		$greet	.= "\n\nIni adalah grup percobaan bot, mohon maaf kalau mengganggu notifikasimu ya, hehe :V \n";
-		$greet	.= "Kalo mau coba, silakan bisa cobain perintah ini: \n";
+		$greet	.= "\n\nIni adalah grup BPBD Kota Semarang, berikut adalah perintah untuk menjalankan bot BPBD Semarang \n";
 		$greet	.= "/start = inisialisasi bot \n";
-		$greet	.= "/ping = tes response user ke bot \n";
 		$greet	.= "/time = untuk lihat waktu sekarang \n\n";
-		$greet	.= "Silahkan dicoba, <b>" . $nama . "</b>";
+		$greet	.= "Silahkan dicoba, <b>" . $nama . "</b> \n";
+		$greet	.= "Aktifkan notifikasi di channel BPBD Semarang agar mendapatkan info terbaru dari BPBD Kota Semarang";
 
 		//text bold untuk username yg baru gabung
 		$option = [
