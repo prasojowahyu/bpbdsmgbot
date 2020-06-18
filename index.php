@@ -60,7 +60,7 @@
 		$option = [
 			'parse_mode' => 'html',
 			'reply_markup' => ['inline_keyboard'=> $keyboard,
-			'resize_keyboard'=> true
+			'resize_keyboard'=> true,
 		];
 
 		//send greetings
