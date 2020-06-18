@@ -59,12 +59,12 @@
 
 		$option = [
 			'parse_mode' => 'html',
-			'reply_markup' => ['inline_keyboard'=> $keyboard,
-			'resize_keyboard'=> true,
+			'reply_markup' => ['inline_keyboard'=> $keyboard],
+			'resize_keyboard' => true,
 		];
 
 		//send greetings
-		Bot::sendMessage($greet, $option, $keyboard);
+		Bot::sendMessage($greet, $option);
 	});
 
 
