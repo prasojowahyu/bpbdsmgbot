@@ -1,6 +1,6 @@
 <?php
 	require_once 'vendor/autoload.php'; 
-	$bot = new PHPTelebot('1167185320:AAEpswmETV0XF1egPH24dCKrCwnnWaFDRlw', '@bpbdsemarang_6php1bot'); // Bot username is optional, its required for handle command that contain username (/command@username) like on a group.
+	$bot = new PHPTelebot('940226436:AAFlrS5O19tMDWpCq-3YM2eMJb4CL16nqsU', '@BPBD_Semarangbot'); // Bot username is optional, its required for handle command that contain username (/command@username) like on a group.
 	require 'menuButton.php';
 
 	// Simple command
@@ -53,13 +53,18 @@
 		$greet	.= "Silahkan dicoba, <b>" . $nama . "</b> \n";
 		$greet	.= "Aktifkan notifikasi di channel BPBD Semarang agar mendapatkan info terbaru dari BPBD Kota Semarang";
 
-		//text bold untuk username yg baru gabung
+		$keyboard[] = [
+			['text' => 'Channel BPBD Semarang', 'url' => 'https://t.me/BPBD_Semarang/'],
+		];
+
 		$option = [
-			'parse_mode' => 'html'
+			'parse_mode' => 'html',
+			'reply_markup' => ['inline_keyboard'=> $keyboard,
+			'resize_keyboard'=> true
 		];
 
 		//send greetings
-		Bot::sendMessage($greet, $option);
+		Bot::sendMessage($greet, $option, $keyboard);
 	});
 
 
