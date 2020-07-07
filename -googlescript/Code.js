@@ -1,4 +1,4 @@
-// masukkan token bot mu di sini
+//bot token
 var token = '1161949998:AAH84066MIi1YZDPUjWzZ56tFKK4Ta1gj58';
 
 // buat objek baru kita kasih nama tg
@@ -33,7 +33,7 @@ function prosesPesan(update) {
     var cb = update.callback_query;
     
     if ( /me_say/i.exec(cb.data) ){
-      let pesan = "Hai teman-teman, selamat belajar!";
+      let pesan = "Halo!";
       return tg.request('answerCallbackQuery', { callback_query_id: cb.id, text: pesan });
     }
     
@@ -82,21 +82,21 @@ function prosesPesan(update) {
     var pola = /^(\/\+tag (#\w+)\s).{1,}/i;
     if (pola.exec(msg.text) ) {
        // pisah nama tag dan isi pesan
-       var cocok = msg.text.match(pola);
-       var tagName = cocok[2];
-       var tagValue = msg.text.replace(cocok[1],"");
-       var pesanTag = tagTambah(tagName, tagValue);
-       return tg.kirimPesan(msg.chat.id, pesanTag);
+      var cocok = msg.text.match(pola);
+      var tagName = cocok[2];
+      var tagValue = msg.text.replace(cocok[1],"");
+      var pesanTag = tagTambah(tagName, tagValue);
+      return tg.kirimPesan(msg.chat.id, pesanTag);
     }
     
     // respon #tag dan menampilkan isinya
     // ini menggunakan regex yang awam susah paham, intinya klo ada hashtag ( 1 kata yang depannya ada # nya ) :
     var pola = /^#\w+$/i;
     if (pola.exec(msg.text) ) {
-       var pesanTag = tagCari(msg.text);
-       if (pesanTag) {
+      var pesanTag = tagCari(msg.text);
+      if (pesanTag) {
             return sendMsgReplyTag(msg, pesanTag);
-       }
+      }
     }
 
     // Merespon penghapusan tag 
@@ -104,20 +104,18 @@ function prosesPesan(update) {
     var pola = /^\/-tag (#\w+)$/i;
     if (pola.exec(msg.text) ) {
        // ambil nama tag nya aja
-       var cocok = msg.text.match(pola);
-       var tagName = cocok[1];
-       var pesanTag = hapusTag(tagName);
-       return tg.kirimPesan(msg.chat.id, pesanTag);
+      var cocok = msg.text.match(pola);
+      var tagName = cocok[1];
+      var pesanTag = hapusTag(tagName);
+      return tg.kirimPesan(msg.chat.id, pesanTag);
     }
-
     // Merespon list tag 
     // Dengan format: /tags
     var pola = /^\/tags$/i;
     if (pola.exec(msg.text) ) {
-       var pesanTag = tagList();
-       return tg.kirimPesan(msg.chat.id, pesanTag);
-    }
-    
+      var pesanTag = tagList();
+      return tg.kirimPesan(msg.chat.id, pesanTag);
+    }    
     
     // mengidentifikasi user: ID nya, nama, dan bahasa yang dipergunakan
     
@@ -186,7 +184,7 @@ function prosesPesan(update) {
   // Nah ini, fungsi utama buat handle user yang masuk ke grup
   // deteksi ada event user baru atau gak:
   if (update.message.new_chat_member) { 
-     
+    
     // penyederhanaan variable
     var msg = update.message;
     
