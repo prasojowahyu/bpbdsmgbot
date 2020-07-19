@@ -14,23 +14,23 @@ ___
 
 ## TextStyle
 <!-- Italic -->
-*This Is Italic* \"*"
+*This Is Italic* \"*This Is Italic*"
 
-_This Is Italic_ \"_"
+_This Is Italic_ \"_This Is Italic_"
 
 <!-- Strong -->
-**This Is Bold** \"**"
+**This Is Bold** \"**This Is Bold***"
 
-__This Is Bold__ \"__"
+__This Is Bold__ \"__This Is Bold___"
 
 <!-- Strikethrough -->
-~~This Is Strikethrough~~ \"~~"
+~~This Is Strikethrough~~ \"~~This Is Strikethrough~~"
 
 ---
 
 ## Quotes
 <!-- Blockuote -->
-> This Is Quote \">"
+> This Is Quote \"> This Is Quote"
 ___
 
 ## Links
@@ -47,10 +47,10 @@ ___
 ## LISTS
 
 <!-- UL -->
-* Item 1 \"*"
+* Item 1 \"* Item 1"
 * Item 2
 * Item 3 
-    * Nested Item 1
+    * Nested Item 1 \"(tab)* Nested Item 1"
     * Nested Item 2
         * Nested Item 1
 
@@ -115,8 +115,8 @@ ___
 ___
 
 ## Task Lists
-* [*] Task 1
-* [*] Task 2
+* [x] Task 1
+* [x] Task 2
 * [ ] Task 3
 
 ---
