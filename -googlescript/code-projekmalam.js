@@ -92,12 +92,41 @@ function prosesPesan(update) {
                     return sendMsgKeyboardInline(msg.chat.id, pesan, keyboard);
                 }
 
+                //[Sosial Media]
+                if (/^Sosial Media/i.exec(msg.text)) {
+                    let pesan = "Silakan Akses Link Sosial Media Resmi di Bawah:";
+                    let keyboard = [
+                        [{
+                            "text": "🟡 Instagram",
+                            "url": "https://www.instagram.com/bpbd_semarang/"
+                        }, ],
+                        [{
+                            "text": "🟢 Twitter",
+                            "url": "https://twitter.com/BPBD_Semarang"
+                        }, ],
+                        [{
+                            "text": "🔵 Facebook",
+                            "url": "https://www.facebook.com/bpbd.semarang"
+                        }, ],
+                        [{
+                            "text": "🔴 Youtube",
+                            "url": "https://www.youtube.com/channel/UCx3mUCT3iKzFQ2T0oHrZQUQ/"
+                        }, ],
+                    ];
+                    return sendMsgKeyboardInline(msg.chat.id, pesan, keyboard);
+                }
 
-
-            // kalau nanti mau kembangin sendiri menjadi bot interaktif, code nya taruh disini
-            // atau buatkan fungsi tersendiri saja buat handle nya biar ga bertumpuk panjang
-            // -- mulai custom text --
-            // akhir deteksi pesan text
+                //[Contact]
+                if (/^Contact/i.exec(msg.text)) {
+                    let pesan = "Silakan kirimkan laporan kejadian, masukan, atau saran ke kontak berikut";
+                    let keyboard = [
+                        [{
+                            "text": "📢 WhatsApp BPBD Semarang",
+                            "url": "https://api.whatsapp.com/send?phone=628122010051"
+                        }, ]
+                    ];
+                    return sendMsgKeyboardInline(msg.chat.id, pesan, keyboard);
+                }
         }
 
         ////GROUP HANDLER
