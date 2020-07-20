@@ -57,7 +57,7 @@ function prosesPesan(update) {
             //MAIN MENU
             if (/\/start/i.exec(msg.text)) {
                 // pesan buat dikirim
-                let pesan = "Kabar Terbaru Untuk:";
+                let pesan = "👋🏻 Hai, Silakan pilih menu disini..";
                 // berisi button menu utama
                 let keyboard = [
                     ['Kabar Terbaru', 'Website'],
@@ -66,6 +66,31 @@ function prosesPesan(update) {
                 // panggil fungsi sendMsgKeyboard yang dibuat sebelumnya
                 return sendMsgKeyboard(msg.chat.id, pesan, keyboard);
             }
+
+                ////SUB MENU
+                //[Kabar Terbaru]
+                if (/^Kabar Terbaru/i.exec(msg.text)) {
+                    // pesan buat dikirim
+                    let pesan = "Kabar Terbaru Untuk:";
+                    // berisi button menu utama
+                    let keyboard = [
+                        ['Bencana', 'Cuaca'],
+                        ['Home']
+                    ]
+                    
+                    return sendMsgKeyboard(msg.chat.id, pesan, keyboard);
+                }
+
+                //[Website]
+                if (/^Website/i.exec(msg.text)) {
+                    let pesan = "Silakan Akses Link di Bawah:";
+                    let keyboard = [
+                        [{  "text": "🌐 Web BPBD Kota Semarang",
+                            "url": "https://bpbd.semarangkota.go.id/" }, 
+                        ]
+                    ];
+                    return sendMsgKeyboardInline(msg.chat.id, pesan, keyboard);
+                }
 
 
 

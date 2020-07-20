@@ -35,3 +35,18 @@ function sendMsgKeyboard(chatid, pesan, keyboard) {
     let r = tg.request('sendMessage', data);
     return r;
 }
+
+////KEYBOARD INLINE
+// fungsi untuk mengirim pesan dengan keyboard inline
+function sendMsgKeyboardInline(chatid, pesan, keyboard) {
+    let data = {
+        chat_id: chatid,
+        text: pesan,
+        parse_mode: 'HTML',
+        reply_markup: {
+            inline_keyboard: keyboard
+        }
+    }
+    let r = tg.request('sendMessage', data);
+    return r;
+}
