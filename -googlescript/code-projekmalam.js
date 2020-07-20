@@ -6,25 +6,6 @@ var token = '1386325447:AAGb4qirmo7-ADVBuIuUmZ0deS1eOrBe4ic';
 // buat objek baru kita kasih nama tg
 var tg = new telegram.daftar(token);
 
-////SET WEBHOOK HANDLER
-// Isi dengan web App URL yang di dapat saat deploy
-var webAppUrl = "https://script.google.com/macros/s/AKfycbxGN5QCEJF4JlvX9vGKpIH69mfsFOegE44-SXCMAgcbuEzbGCA/exec";
-
-function setWebHook() {
-    var result = tg.request('setWebhook', {
-        url: webAppUrl
-    });
-    Logger.log(result);
-}
-////DELETE WEBHOOK HANDLER
-function deleteWebhook() {
-    var result = tg.request('deleteWebhook', {
-        url: webAppUrl
-    });
-    Logger.log(result);
-}
-
-
 ////BASE HANDLER
 // fungsi buat handle hanya menerima pesan berupa POST, kalau GET keluarkan pesan error
 function doGet(e) {
@@ -56,15 +37,11 @@ function prosesPesan(update) {
         ////BASIC COMMAND
         // jika ada pesan berupa text
         if (msg.text) {
+            //////////////////////////////////////////////////////////////////
+            ////COMMAND REGEX
             // jika user ketik /ping, bot akan jawab Pong!
             if (/\/ping/i.exec(msg.text)) {
                 return tg.kirimPesan(msg.chat.id, '<b>Pong!</b>', 'HTML'); //parse mode HTML
-            }
-            // jika user klik start
-            if (/\/start/i.exec(msg.text)) {
-                // pesan dengan parse mode markdown
-                // sesuaikan sendiri jika ingin format text jenis lain atau tanpa format
-                return tg.kirimPesan(msg.chat.id, "Pesan diterima!", "Markdown");
             }
             // jika user ketik /help, bot akan tampilkan panduan
             if (/\/help/i.exec(msg.text)) {
@@ -74,6 +51,22 @@ function prosesPesan(update) {
             if (/check/i.exec(msg.text)) {
                 return tg.kirimPesan(msg.chat.id, 'CHECK Re-CHECK!', 'HTML');
             }
+
+            //////////////////////////////////////////////////////////////////
+            ////BUTTONS
+            //MAIN MENU
+            if (/\/start/i.exec(msg.text)) {
+                // pesan buat dikirim
+                let pesan = "Kabar Terbaru Untuk:";
+                // berisi button menu utama
+                let keyboard = [
+                    ['Kabar Terbaru', 'Website'],
+                    ['Sosial Media', 'Contact']
+                ]
+                // panggil fungsi sendMsgKeyboard yang dibuat sebelumnya
+                return sendMsgKeyboard(msg.chat.id, pesan, keyboard);
+            }
+
 
 
             // kalau nanti mau kembangin sendiri menjadi bot interaktif, code nya taruh disini
