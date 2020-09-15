@@ -2,7 +2,7 @@
 
 ////GLOBAL VAR
 // regist token
-var token = '1386325447:AAGb4qirmo7-ADVBuIuUmZ0deS1eOrBe4ic';
+var token = '940226436:AAFlrS5O19tMDWpCq-3YM2eMJb4CL16nqsU';
 // buat objek baru kita kasih nama tg
 var tg = new telegram.daftar(token);
 
