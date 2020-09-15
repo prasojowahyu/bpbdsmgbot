@@ -90,8 +90,8 @@ function prosesPesan(update) {
                     ////Sub Menu [Kabar Terbaru]
                     //[Bencana]
                     if (/^Bencana/i.exec(msg.text)) {
-                        let pesan = "Dapatkan update terbaru dari BPBD Kota Semarang, Aktifkan notifikasi di Channel ini: \nhttps://t.me/BPBD_Semarang/";
-                        return tg.kirimPesan(msg.chat.id, 'CHECK Re-CHECK!', 'HTML');
+                        let pesan = "Dapatkan update berita up-to-date dari BPBD Kota Semarang, Aktifkan notifikasi di Channel ini: \nhttps://t.me/BPBD_Semarang/";
+                        return sendMsgKeyboard(msg.chat.id, pesan);
                     }
                     //[Cuaca]
                     if (/^Cuaca/i.exec(msg.text)) {
@@ -102,7 +102,7 @@ function prosesPesan(update) {
                     if (/^Home/i.exec(msg.text)) {
                         return tg.sendMsgKeyboard(msg.chat.id, strHome, kbHome);
                     }
-                    ///END//SUB-MENU/////////////////////////////////////////
+                    ///END//SUB-MENU///////////////////////////////////////////
 
                 //[Website]
                 if (/^Website/i.exec(msg.text)) {
