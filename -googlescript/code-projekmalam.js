@@ -45,7 +45,8 @@ function prosesPesan(update) {
             }
             // jika user ketik /help, bot akan tampilkan panduan
             if (/\/help/i.exec(msg.text)) {
-                return tg.kirimPesan(msg.chat.id, '<b>HELP ON THE WAY</b>', 'HTML'); //parse mode HTML
+                let pesan = "Selamat datang di bot BPBD Semarang \nJalankan perintah berikut untuk memulai menggunakan bot ini. \n/start - untuk menginisilaisasi bot, memunculkan menu utama \n/help - menampilkan bantuan \njika ada laporan, masukan, dan saran, dapat menghubungi kami melalui kontak WA di menu Contact. \nterimakasih.";
+                return tg.kirimPesan(msg.chat.id, pesan);
             }
             // command tanpa / (harus disable privasi)
             if (/check/i.exec(msg.text)) {
