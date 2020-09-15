@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit8ebd176e404d87e28e429150b32ffe3a
+class ComposerStaticInit46ef9e6648bdd30fb8880459c6e9e3d3
 {
     public static $files = array (
         '60485befb91f39a927e5665f589d340e' => __DIR__ . '/..' . '/radyakaze/phptelebot/src/PHPTelebot.php',

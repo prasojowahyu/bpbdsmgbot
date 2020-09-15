@@ -80,6 +80,18 @@ function prosesPesan(update) {
                     
                     return sendMsgKeyboard(msg.chat.id, pesan, keyboard);
                 }
+                    ////Sub Menu [Kabar Terbaru]
+                    //[Bencana]
+                    if (/^Bencana/i.exec(msg.text)) {
+                        let pesan = "Dapatkan update terbaru dari BPBD Kota Semarang, Aktifkan notifikasi di Channel ini: \nhttps://t.me/BPBD_Semarang/";
+                        return tg.kirimPesan(msg.chat.id, 'CHECK Re-CHECK!', 'HTML');
+                    }
+                    //[Cuaca]
+                    if (/^Cuaca/i.exec(msg.text)) {
+                        let pesan = "Informasi Cuaca terbaru di Kota Semarang, \nSumber: bmkg \nhttps://www.bmkg.go.id/cuaca/prakiraan-cuaca.bmkg?Kota=Semarang&AreaID=501262&Prov=35";
+                        return sendMsgKeyboard(msg.chat.id, pesan);
+                    }
+                    
 
                 //[Website]
                 if (/^Website/i.exec(msg.text)) {
