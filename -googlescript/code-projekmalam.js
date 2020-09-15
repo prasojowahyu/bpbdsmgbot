@@ -67,6 +67,13 @@ function prosesPesan(update) {
                 return sendMsgKeyboard(msg.chat.id, pesan, keyboard);
             }
 
+            //keyboard pake var
+            var strHome = '👋🏻 Hai Hai Hai, Silakan pilih menu disini..';
+            var kbHome  =   [ 
+                [ 'Kabar Terbaru', 'Website' ],
+                [ 'Sosial Media', 'Contact' ] 
+            ];
+
                 ////SUB MENU
                 //[Kabar Terbaru]
                 if (/^Kabar Terbaru/i.exec(msg.text)) {
@@ -91,7 +98,11 @@ function prosesPesan(update) {
                         let pesan = "Informasi Cuaca terbaru di Kota Semarang, \nSumber: bmkg \nhttps://www.bmkg.go.id/cuaca/prakiraan-cuaca.bmkg?Kota=Semarang&AreaID=501262&Prov=35";
                         return sendMsgKeyboard(msg.chat.id, pesan);
                     }
-                    
+                    //[Home]
+                    if (/^Home/i.exec(msg.text)) {
+                        return tg.sendMsgKeyboard(msg.chat.id, strHome, kbHome);
+                    }
+                    ///END//SUB-MENU/////////////////////////////////////////
 
                 //[Website]
                 if (/^Website/i.exec(msg.text)) {
